@@ -67,6 +67,8 @@ public class Account implements HasJsonAnyGetterSetter {
     private long postCount;
     @JsonProperty("can_vote")
     private boolean canVote;
+    //HF20 Mana stuff
+    private VotingManabar votingManabar;
     // Orginial type is uint16, but we have to use int here.
     @JsonProperty("voting_power")
     private int votingPower;
@@ -154,8 +156,29 @@ public class Account implements HasJsonAnyGetterSetter {
     private TimePointSec lastPost;
     @JsonProperty("last_root_post")
     private TimePointSec lastRootPost;
+    @JsonProperty("post_bandwidth")
+    private BigInteger postBandwidth;
+    public BigInteger getPostBandwidth() {
+		return postBandwidth;
+	}
 
-    /**
+	public void setPostBandwidth(BigInteger postBandwidth) {
+		this.postBandwidth = postBandwidth;
+	}
+
+	//new with HF20
+    @JsonProperty("pending_claimed_accounts")
+    private BigInteger pending_claimed_accounts;
+
+    public BigInteger getPending_claimed_accounts() {
+		return pending_claimed_accounts;
+	}
+
+	public void setPending_claimed_accounts(BigInteger pending_claimed_accounts) {
+		this.pending_claimed_accounts = pending_claimed_accounts;
+	}
+
+	/**
      * This object is only used to wrap the JSON response in a POJO, so
      * therefore this class should not be instantiated.
      */
@@ -586,4 +609,12 @@ public class Account implements HasJsonAnyGetterSetter {
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
     }
+
+	public VotingManabar getVotingManabar() {
+		return votingManabar;
+	}
+
+	public void setVotingManabar(VotingManabar votingManabar) {
+		this.votingManabar = votingManabar;
+	}
 }
