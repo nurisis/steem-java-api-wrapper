@@ -39,10 +39,11 @@ public class SteemJConfig {
 	private static final String DEFAULT_STEEM_API_URI = "https://api.steemit.com";
 	/** The SteemJ account. */
 	private static final AccountName STEEMJ_ACCOUNT = new AccountName("steemj");
+	private static final AccountName MUKSIHS_ACCOUNT = new AccountName("muksihs");
 	/**
 	 * The default beneficiary account.
 	 */
-	private AccountName beneficiaryAccount = STEEMJ_ACCOUNT;
+	private AccountName beneficiaryAccount = MUKSIHS_ACCOUNT;
 	/** The SteemJ version. */
 	private static final String STEEMJ_VERSION = SteemJ.class.getPackage().getImplementationVersion();
 	/** The SteemJ App-Name */
