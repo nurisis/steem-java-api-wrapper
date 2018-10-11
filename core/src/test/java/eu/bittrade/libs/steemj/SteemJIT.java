@@ -67,6 +67,7 @@ public class SteemJIT extends BaseIT {
     private static final Logger LOGGER = LogManager.getLogger(SteemJIT.class);
     private static final AccountName ACCOUNT = new AccountName("dez1337");
     private static final AccountName ACCOUNT_TWO = new AccountName("randowhale");
+    private static final AccountName ACCOUNT_THREE = new AccountName("bitker001");
     private static final AccountName WITNESS_ACCOUNT = new AccountName("riverhead");
     private static final Permlink PERMLINK = new Permlink("steem-api-wrapper-for-java-update1");
 
@@ -115,6 +116,10 @@ public class SteemJIT extends BaseIT {
                 firstOperation instanceof AccountCreateOperation);
 
         final Map<Integer, AppliedOperation> accountHistorySetTwo = steemJ.getAccountHistory(ACCOUNT_TWO, 1000, 1000);
+        assertEquals("expect response to contain 1001 results", 1001, accountHistorySetTwo.size());
+        
+        final Map<Integer, AppliedOperation> accountHistorySetThree = steemJ.getAccountHistory(ACCOUNT_THREE, 1000, 1000);
+        
         assertEquals("expect response to contain 1001 results", 1001, accountHistorySetTwo.size());
 
         assertThat(accountHistorySetTwo.get(0).getOp(), instanceOf(AccountCreateWithDelegationOperation.class));
