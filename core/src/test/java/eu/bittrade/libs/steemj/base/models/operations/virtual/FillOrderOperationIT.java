@@ -27,7 +27,7 @@ public class FillOrderOperationIT extends BaseITForOperationParsing {
     private static final int OPERATION_INDEX = 0;
     private static final String EXPECTED_CURRENT_OWNER = "enomujjass";
     private static final AccountName EXPECTED_OPEN_OWNER = new AccountName("oscarps");
-    private static final int EXPECTED_CURRENT_ORDER_ID = 1507078540;
+    private static final long EXPECTED_CURRENT_ORDER_ID = 1507078540L;
     private static final long EXPECTED_OPEN_ORDER_ID = 1507059984L;
     private static final AssetSymbolType EXPECTED_OPEN_PAYS_SYMBOL = AssetSymbolType.STEEM;
     private static final double EXPECTED_OPEN_PAYS_VALUE_REAL = 0.015;

@@ -1,5 +1,6 @@
 package eu.bittrade.libs.steemj.base.models.operations.virtual;
 
+import java.math.BigInteger;
 import java.util.Map;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -27,7 +28,7 @@ public class FillOrderOperation extends Operation {
     private AccountName currentOwner;
     @JsonProperty("current_orderid")
     // Original type is uint32_t here so we have to use long.
-    private int currentOrderId;
+    private long currentOrderId;
     @JsonProperty("current_pays")
     private Asset currentPays;
     @JsonProperty("open_owner")
@@ -56,7 +57,7 @@ public class FillOrderOperation extends Operation {
     /**
      * @return The current order id.
      */
-    public int getCurrentOrderId() {
+    public long getCurrentOrderId() {
         return currentOrderId;
     }
 
