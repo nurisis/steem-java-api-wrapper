@@ -34,7 +34,7 @@ public class AppliedOperation implements HasJsonAnyGetterSetter {
     private int block;
     // Original type is uint32_t.
     @JsonProperty("trx_in_block")
-    private int trxInBlock;
+    private long trxInBlock;
     // Original type is uint16_t.
     @JsonProperty("op_in_trx")
     private int opInTrx;
@@ -74,7 +74,7 @@ public class AppliedOperation implements HasJsonAnyGetterSetter {
      * 
      * @return The transaction index in the block.
      */
-    public int getTrxInBlock() {
+    public long getTrxInBlock() {
         return trxInBlock;
     }
 

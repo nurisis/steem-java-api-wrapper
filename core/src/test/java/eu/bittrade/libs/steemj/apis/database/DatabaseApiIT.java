@@ -209,7 +209,7 @@ public class DatabaseApiIT extends BaseIT {
 
         assertThat(appliedOperationsOnlyVirtual.size(), equalTo(6));
         assertThat(appliedOperationsOnlyVirtual.get(0).getOpInTrx(), equalTo(1));
-        assertThat(appliedOperationsOnlyVirtual.get(0).getTrxInBlock(), equalTo(41));
+        assertThat(appliedOperationsOnlyVirtual.get(0).getTrxInBlock(), equalTo(41L));
         assertThat(appliedOperationsOnlyVirtual.get(0).getVirtualOp(), equalTo(0L));
         assertThat(appliedOperationsOnlyVirtual.get(0).getOp(), instanceOf(ProducerRewardOperation.class));
 
@@ -218,7 +218,7 @@ public class DatabaseApiIT extends BaseIT {
 
         assertThat(appliedOperations.size(), equalTo(51));
         assertThat(appliedOperations.get(1).getOpInTrx(), equalTo(0));
-        assertThat(appliedOperations.get(1).getTrxInBlock(), equalTo(1));
+        assertThat(appliedOperations.get(1).getTrxInBlock(), equalTo(1L));
         assertThat(appliedOperations.get(1).getVirtualOp(), equalTo(0L));
         assertThat(appliedOperations.get(1).getOp(), instanceOf(CommentOperation.class));
     }
