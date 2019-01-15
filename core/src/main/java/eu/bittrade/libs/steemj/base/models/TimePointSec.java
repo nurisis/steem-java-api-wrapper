@@ -57,7 +57,7 @@ public class TimePointSec implements ByteTransformable , HasJsonAnyGetterSetter 
         try {
             this.setDateTime(dateTime);
         } catch (ParseException e) {
-            System.err.println("Not able to transform '" + dateTime + "' into a date object.");
+            //System.err.println("Not able to transform '" + dateTime + "' into a date object.");
             this.setDateTime(0l);
         }
     }
