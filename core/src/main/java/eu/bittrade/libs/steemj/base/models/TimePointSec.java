@@ -127,6 +127,11 @@ public class TimePointSec implements ByteTransformable , HasJsonAnyGetterSetter 
      *             If the given String does not match the pattern.
      */
     public void setDateTime(String dateTime) throws ParseException {
+//         this.setDateTime(SteemJUtils.transformStringToTimestamp(dateTime));
+     // when datetime==1970-01-01T00 -> can't convert . get an error
+        if(dateTime.equals("1970-01-01T00")) {
+            dateTime += ":00:00";
+        }
         this.setDateTime(SteemJUtils.transformStringToTimestamp(dateTime));
     }
 
